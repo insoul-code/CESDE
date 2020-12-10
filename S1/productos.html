@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script src="js/calcularcredito.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      window.onload = function () {
+            // Variables
+            let baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'Samsung S20 E',
+                    precio: 2500000,
+                    imagen: 'images/s20e.jpg'
+                },
+                {
+                    id: 2,
+                    nombre: 'Huawei P40 Pro',
+                    precio: 5000000,
+                    imagen: 'images/p40.jpg'
+                },
+                {
+                    id: 3,
+                    nombre: 'Samsung Galaxy S20',
+                    precio: 3100000,
+                    imagen: 'images/s20.jpg'
+                },
+                {
+                    id: 4,
+                    nombre: 'Samsumg S20 FE',
+                    precio: 2450000,
+                    imagen: 'images/s20fe.jpg'
+                },
+                {
+                    id: 5,
+                    nombre: 'Samsumg Galaxy Note 20',
+                    precio: 5500000,
+                    imagen: 'images/note20.jpg'
+                },
+                {
+                    id: 6,
+                    nombre: 'Xiaomi Mi 10 Ultra',
+                    precio: 5500000,
+                    imagen: 'images/mi10.jpg'
+                }
+
+            ]
+            let $items = document.querySelector('#items');
+            let carrito = [];
+            let total = 0;
+            let $carrito = document.querySelector('#carrito');
+            let $total = document.querySelector('#total');
+            let $botonVaciar = document.querySelector('#boton-vaciar');
+
+            // Funciones
+            function renderItems() {
+                for (let info of baseDeDatos) {
+                    // Estructura
+                    let miNodo = document.createElement('div');
+                    miNodo.classList.add('card-productos', 'col-md-5', 'col-sm-12');
+                    // Body
+                    let miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body', 'p-0');
+                    // Titulo
+                    let miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title', 'font-16');
+                    miNodoTitle.textContent = info['nombre'];
+                    // Imagen
+                    let miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info['imagen']);
+                    // Precio
+                    let miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent='$'+(new Intl.NumberFormat('es-CO').format(info['precio']))+ '';
+                    // Boton 
+                    let miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('button', 'button-secondary', 'text-nowrap');
+                    miNodoBoton.textContent = 'Agregar al carrito';
+                    miNodoBoton.setAttribute('marcador', info['id']);
+                    miNodoBoton.addEventListener('click', anyadirCarrito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    $items.appendChild(miNodo);
+                }
+            }
+
+            function anyadirCarrito () {
+                // Añadimos el Nodo a nuestro carrito
+                carrito.push(this.getAttribute('marcador'))
+                // Calculo el total
+                calcularTotal();
+                // Renderizamos el carrito 
+                renderizarCarrito();
+            }
+
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                $carrito.textContent = '';
+                // Quitamos los duplicados
+                let carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach(function (item, indice) {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    let miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-left', 'd-flex', 'justify-content-between', 'align-items-center');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} -  $${(new Intl.NumberFormat('es-CO').format(miItem[0]['precio']))}`;
+                    // Boton de borrar
+                    let miBoton = document.createElement('button');
+                    miBoton.classList.add('button', 'button-link-form');
+                    miBoton.textContent = 'Eliminar';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.setAttribute('item', item);
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    $carrito.appendChild(miNodo);
+                })
+            }
+
+            function borrarItemCarrito() {
+                console.log()
+                // Obtenemos el producto ID que hay en el boton pulsado
+                let id = this.getAttribute('item');
+                // Borramos todos los productos
+                carrito = carrito.filter(function (carritoId) {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Calculamos de nuevo el precio
+                calcularTotal();
+            }
+
+            function calcularTotal() {
+                // Limpiamos precio anterior
+                total = 0;
+                precioFormat = 0;
+                // Recorremos el array del carrito
+                for (let item of carrito) {
+                    // De cada elemento obtenemos su precio
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    total = total + miItem[0]['precio'];
+                }
+                // Formateamos el total para que solo tenga dos decimales
+                let totalDosDecimales = total.toFixed(0);
+                // Renderizamos el precio en el HTML
+                $total.textContent = (new Intl.NumberFormat('es-CO').format(totalDosDecimales));
+                
+            }
+
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+                calcularTotal();
+            }
+
+            // Eventos
+            $botonVaciar.addEventListener('click', vaciarCarrito);
+
+            // Inicio
+            renderItems();
+        } 
+    </script>
+  </head>
+  <body>
+    <section class="header-section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#"
+            ><img src="images/logo.svg" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"
+              ><img src="images/menu.svg" alt=""
+            /></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html"
+                  >Inicio <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="empresa.html">Nuestra empresa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ventas.html">Ventas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.html">Galería de fotos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="lista.html">Lista de productos</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <button class="button button-shopping">
+                <img src="images/shopping-cart.svg" alt="" />
+              </button>
+              <button class="button button-link my-2 my-sm-0" type="submit">
+                Registrarme
+              </button>
+              <button
+                class="button button-primary my-2 my-sm-0"
+                type="button"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Iniciar sesión
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <div class="container">
+        <div class="mt-4 mb-4">
+            <a class="button button-link-form" href="galeria.html">Volver a la galería de fotos</a>
+            <h1>Productos</h1>
+            <h6>Selecciona los celulares que más te gusten para comprarlos</h6>
+        </div>
+      <div class="row">
+        <!-- Elementos generados a partir del JSON -->
+        <main id="items" class="col-md-7 col-sm-12 row"></main>
+        <!-- Carrito -->
+        <aside class="col-md-5 col-sm-12">
+          <h2>Carrito</h2>
+          <!-- Elementos del carrito -->
+          <ul id="carrito" class="list-group"></ul>
+          <hr />
+          <!-- Precio total -->
+          <div class="d-flex justify-content-between align-items-center">
+              <button id="boton-vaciar" class="button button-link-form">Vaciar carrito</button>
+              <h4 class="mb-0">Total: $<span id="total"></span></h4>
+          </div>
+          <div>
+            <button class="button button-primary mt-3" style="width: 100%; font-size: 18px; font-weight: bold;">Ir a pagar</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <section class="footer-section">
+      <div class="container">
+        <footer class="mt-4">
+          <div class="row">
+            <div class="col-md-4">
+              <h6>Artículos destacados</h6>
+              <ul>
+                <a href=""><li>Iphone XR 128 GB</li></a>
+                <a href=""><li>Samsung Galaxy S20</li></a>
+                <a href=""><li>Samsung Galaxy Note 10 Lite</li></a>
+                <a href=""><li>Iphone 12</li></a>
+                <a href=""><li>Xiaomi Redmi Note 10</li></a>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Promociones</h6>
+              <ul>
+                <a href=""
+                  ><li>
+                    Iphone 12 mini 128 GB <span class="discount">30% OFF</span>
+                  </li></a
+                >
+                <a href=""
+                  ><li>
+                    Samsung Galaxy S20 PRO <span class="discount">10% OFF</span>
+                  </li></a
+                >
+                <a href=""
+                  ><li>
+                    Motoroal Z Flip <span class="discount">15% OFF</span>
+                  </li></a
+                >
+                <a href=""
+                  ><li>Galaxy Fold <span class="discount">20% OFF</span></li></a
+                >
+                <a href=""
+                  ><li>
+                    Xiaomi Redmi Note 9 <span class="discount">50% OFF</span>
+                  </li></a
+                >
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Centro de contacto</h6>
+              <ul>
+                <a href=""><li>Preguntas frecuentes</li></a>
+                <a href=""><li>Contacto por mail</li></a>
+                <a href=""><li>Contacto por Whatsapp</li></a>
+                <a href=""><li>Contacto pot Facebook</li></a>
+                <a href=""><li>Abrir caso por robo</li></a>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+    <!-- Calculador de crédito -->
+    <button
+      type="button"
+      class="open-button"
+      id="openCredito"
+      onclick="openForm()"
+    >
+      <span class="material-icons">monetization_on</span>Simular crédito
+    </button>
+
+    <div class="chat-popup" id="myForm">
+      <form class="form-container">
+        <div class="d-flex justify-content-between">
+          <h4>Simulador de crédito</h4>
+          <button type="button" class="button button-link-form">
+            <span onclick="closeForm()" class="material-icons"> close </span>
+          </button>
+        </div>
+        <div class="form-group">
+          <label for="celular">¿Cuál celular deseas a crédito?</label>
+          <select class="form-control" id="celular">
+            <option></option>
+            <option value="iphone">iPhone 12 mini</option>
+            <option value="samsung">Samsumg Galaxy Note 20 Ultra</option>
+            <option value="oppo">Oppo MK Ultra</option>
+            <option value="huawei">Huawei Mate 30 Pro</option>
+          </select>
+          <small id="menscelular" class="form-text text-danger"></small>
+        </div>
+        <div class="form-group">
+          <label for="celular">Seleccione el número de cuotas</label>
+          <select class="form-control" id="cuotas">
+            <option></option>
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+          </select>
+          <small id="menscuotas" class="form-text text-danger"></small>
+        </div>
+        <div class="form-group">
+          <label for="celular">¿Incluir cuota de manejo?</label>
+          <select class="form-control" id="cuotamanejo">
+            <option></option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+          <small id="mensmanejo" class="form-text text-danger"></small>
+        </div>
+        <div class="btns d-flex justify-content-between mt-3">
+          <button type="button" class="button button-link-form" id="limpiar">
+            Limpiar campos
+          </button>
+          <button type="button" id="calcularc" class="button button-primary">
+            Simular
+          </button>
+        </div>
+        <div class="d-flex justify-content-between alig-items-center mt-3">
+          <div class="valor-cuota mt-3">
+            <h6>Valor de la cuota</h6>
+            <div class="d-flex alig-items-center">
+              <h5 class="money-item">
+                $
+                <h5 id="valorcuota"></h5>
+              </h5>
+            </div>
+          </div>
+          <div class="total-deuda mt-3">
+            <h6>Total de la deuda</h6>
+            <div class="d-flex alig-items-center">
+              <h5 class="money-item">
+                $
+                <h5 id="totaldeuda"></h5>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Inicio de sesión</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Ingresa tu correo electrónico"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Ingresa tu contraseña"
+                />
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="button button-primary">
+                  Iniciar sesión
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
