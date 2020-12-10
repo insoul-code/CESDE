@@ -1,0 +1,294 @@
+body{
+    background: #FCFCFC;
+}
+
+a, button, li{
+    cursor: pointer;
+}
+
+.header-section, .footer-section, .navbar{
+    background: #272749;
+}
+
+.footer-section{
+    color: white;
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.navbar .nav-item .nav-link{
+    color: white;
+}
+
+.navbar .nav-item .nav-link.active-link{
+    color: #FFBC42;
+    font-weight: 500;
+}
+
+.button{
+    border: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.button-primary{
+    background: #FFBC42;
+    color: #272749;
+    transition: background ease-in-out 0.5s;
+}.button-primary:hover{
+    background: #ffb62e;
+    box-shadow: 1px 2px 12px -8px #000000;
+}
+
+.button-secondary{
+    background: white;
+    border: 1px solid #272749;
+    color: #272749;
+    transition: background ease-in-out 0.5s;
+}.button-secondary:hover{
+    background: #272749;
+    color: white;
+    box-shadow: 1px 2px 12px -8px #000000;
+}
+
+.button-link{
+    background: none;
+    text-decoration: underline;
+    color: white;
+}.button-link:hover{
+    color: #FFBC42;
+}
+
+.button-link-form{
+    background: none;
+    text-decoration: underline;
+    color: #272749;
+    transition: background ease-in-out 0.5s;
+}.button-link-form:hover{
+    background: #E1E9FF;
+}
+
+.button-shopping{
+    background: none;
+}
+
+.card-articulo{
+    box-shadow: 1px 2px 12px -8px #000000;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.info-articulo .categoria-art{
+    background: #FEF1F7;
+    color: #FA78B0;
+    border-radius: 30px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+
+.info-articulo .descripcion-art{
+    color: #7E7E7E;
+}
+
+.info-articulo .precio-art{
+    color: #272749;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+footer ul{
+    padding-left: 0;
+}
+
+footer ul li{
+    list-style: none;
+    margin: 15px 0;
+}
+footer ul a{
+    color: white;
+}
+
+footer ul a:hover{
+    text-decoration: underline;
+    color: #ffd45d;
+}
+
+.discount{
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ff7e42;
+    color: #492616;
+    font-size: 13px;
+}
+
+.card-comision{
+    box-shadow: 1px 2px 12px -8px #000000;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.card-comision .alert-primary{
+    color: #19162d;
+    background-color: #E1E9FF;
+    border-color: #5f48ff;
+}
+
+.card-comision h6{
+    color: #6d6d6d;
+}
+
+.money{
+    background: #ffbc42;
+    padding: 3px 10px;
+    border-radius: 30px;
+    margin: 0 5px 0 0;
+}
+
+.money-item{
+    background: #d6d6d6;
+    padding: 3px 10px;
+    border-radius: 30px;
+    margin: 0 5px 0 0;
+}
+
+#comision, #salario, #pagototal{
+    font-size: 20px;
+    background: none;
+}
+
+.navbar-toggler-icon img{
+    width: 40px;
+}
+
+footer h6{
+    color: #ffbc42;
+}
+
+.valores .valor{
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 12px -8px #000000;
+    margin: 0 20px 0 0;
+}
+
+.valor p{
+    color: #7E7E7E;
+    font-size: 14px;
+}
+
+.card-galeria{
+    background: white;
+    padding: 15px 15px 30px 15px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 12px -8px #000000;
+    margin: 0 0 20px 0;
+}.card-galeria img{
+    width: 250px;
+}.card-galeria h5{
+    margin-bottom: 20px;
+}
+
+.card-productos{
+    background: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 12px -8px #000000;
+    margin: 0 10px 20px 0;
+}.font-16{
+    font-size: 16px;
+}.card-productos img{
+    width: 250px;
+}
+.list-group-item{
+    padding: 5px !important;
+}
+
+table.dataTable thead th, table.dataTable thead td{
+    border-bottom: 1px solid #dddddd;
+}
+
+.open-button {
+    background-color: #FFBC42;
+    color: #272749;
+    padding: 14px 20px 8px 20px;
+    border: none;
+    border-radius: 8px 8px 0px 0px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0;
+    right: 28px;
+  }
+.open-button span{
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+}
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    width: 350px;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 15px 30px 15px;
+    background-color: white;
+    box-shadow: 1px 2px 12px -8px #000000;
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+
+@media only screen and (max-width: 990px) {
+    .navbar-collapse{
+      text-align: center;
+    }
+    .form-inline{
+        justify-content: center;
+    }
+
+    label{
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    footer h6{
+        border-bottom: 1px solid #ffbc42;
+        margin: 20px 0;
+    }
+  }
+@media only screen and (max-width: 576px){
+    .open-button{
+        right: 25%;
+    }
+}
