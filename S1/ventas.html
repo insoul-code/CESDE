@@ -27,6 +27,8 @@
         valventaVende = $("#valventa").val();
         if (nombreVende != "" && fechaVende != "" && zonaVende != "" && salbasicoVende != "" && valventaVende != "" && salbasicoVende >=1000000 && salbasicoVende <= 2000000) {
             if(!isNaN(salbasicoVende) && !isNaN(valventaVende)){
+                $("#mensnombre").text("");
+                $("#mensfecha").text("");
                 $("#menssalbasico").text("");
                 $("#mensvalventa").text("");
                 $("#menszona").text("");
@@ -58,18 +60,24 @@
                 $("#menszona").text("");
                 $("#menssalbasico").text("Ingrese solo valores númericos");
                 $("#mensvalventa").text("");
+                $("#comision").text("");
+                $("#pagototal").text("");
             }else if(!isNaN(salbasicoVende) && isNaN(valventaVende)){
                 $("#mensnombre").text("");
                 $("#mensfecha").text("");
                 $("#menszona").text("");
                 $("#menssalbasico").text("");
                 $("#mensvalventa").text("Ingrese solo valores númericos");
+                $("#comision").text("");
+                $("#pagototal").text("");
             }else if(isNaN(salbasicoVende) && isNaN(valventaVende)){
                 $("#mensnombre").text("");
                 $("#mensfecha").text("");
                 $("#menszona").text("");
                 $("#menssalbasico").text("Ingrese solo valores númericos");
                 $("#mensvalventa").text("Ingrese solo valores númericos");
+                $("#comision").text("");
+                $("#pagototal").text("");
             }
         }else if(nombreVende != "" && fechaVende != "" && zonaVende != "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("");
@@ -77,216 +85,288 @@
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende != "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende != "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende == "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende == "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende == "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende != "" && zonaVende == "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende != "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende != "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende != "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende != "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende == "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende == "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende == "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende != "" && fechaVende == "" && zonaVende == "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende != "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende != "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende != "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende != "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende == "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende == "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende == "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende != "" && zonaVende == "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende != "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende != "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende != "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende == "" && salbasicoVende != "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende == "" && salbasicoVende != "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese el valor de la venta");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende == "" && salbasicoVende == "" && valventaVende != ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(nombreVende == "" && fechaVende == "" && zonaVende == "" && salbasicoVende == "" && valventaVende == ""){
             $("#mensnombre").text("Debe ingresar el nombre del vendedor");
             $("#mensfecha").text("Ingrese la fecha en la cual realizó la venta");
             $("#menszona").text("Debe seleccionar una de las dos zonas: Norte o Sur");
             $("#menssalbasico").text("Ingrese el salario básico");
             $("#mensvalventa").text("Ingrese el valor de la venta");
-        }else if(salbasicoVende <1000000 || salbasicoVende > 2000000){
+            $("#comision").text("");
+            $("#pagototal").text("");
+        }else if(salbasicoVende < 1000000 || salbasicoVende > 2000000){
           $("#mensnombre").text("");
           $("#mensfecha").text("");
           $("#menszona").text("");
           $("#menssalbasico").text("El salario debe ser númerico y debe estar entre $1.000.000 y $2.000.000");
           $("#mensvalventa").text("");
+          $("#comision").text("");
+          $("#pagototal").text("");
         }else if(salbasicoVende >= 1000000 || salbasicoVende <= 2000000 && valventaVende < 15000000){
           $("#mensnombre").text("");
           $("#mensfecha").text("");
           $("#menszona").text("");
           $("#menssalbasico").text("");
           $("#mensvalventa").text("El valor de la venta debe ser mayor o igual a $15.000.000");
-        }else if(salbasicoVende <1000000 || salbasicoVende > 2000000 && valventaVende < 15000000){
+          $("#comision").text("");
+          $("#pagototal").text("");
+        }else if(salbasicoVende < 1000000 && salbasicoVende > 2000000 && valventaVende < 15000000){
           $("#mensnombre").text("");
           $("#mensfecha").text("");
           $("#menszona").text("");
           $("#menssalbasico").text("El salario debe ser númerico y debe estar entre $1.000.000 y $2.000.000");
           $("#mensvalventa").text("El valor de la venta debe ser mayor o igual a $15.000.000");
+          $("#comision").text("");
+          $("#pagototal").text("");
         }else if(isNaN(salbasicoVende) && !isNaN(valventaVende)){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese solo valores númericos");
             $("#mensvalventa").text("");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(!isNaN(salbasicoVende) && isNaN(valventaVende)){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("");
             $("#mensvalventa").text("Ingrese solo valores númericos");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }else if(isNaN(salbasicoVende) && isNaN(valventaVende)){
             $("#mensnombre").text("");
             $("#mensfecha").text("");
             $("#menszona").text("");
             $("#menssalbasico").text("Ingrese solo valores númericos");
             $("#mensvalventa").text("Ingrese solo valores númericos");
+            $("#comision").text("");
+            $("#pagototal").text("");
         }
       });
       $("#btnlimpiar").click(function(){
@@ -312,6 +392,17 @@
 
       function closeForm() {
         document.getElementById("myForm").style.display = "none";
+      }
+
+      function Solo_Texto(e) {
+        var code;
+        if (!e) var e = window.event;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        var character = String.fromCharCode(code);
+        var AllowRegex  = /^[\ba-zA-Z\s-]$/;
+        if (AllowRegex.test(character)) return true;     
+        return false; 
       }
   </script>
   <body>
@@ -438,7 +529,8 @@
             <form>
               <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del vendedor" />
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del vendedor"
+                onkeypress="return Solo_Texto(event);" autocomplete="off" />
                 <small id="mensnombre" class="form-text text-danger"></small>
               </div>
               <div class="row">
@@ -465,7 +557,8 @@
                 <div class="col-6">
                   <div class="form-group">
                     <label for="salbasico">Salario básico mensual</label>
-                    <input type="text" class="form-control" id="salbasico" placeholder="Ingresa el salario básico"/>
+                    <input type="text" class="form-control" id="salbasico" placeholder="Ingresa el salario básico"
+                    autocomplete="off"/>
                     <small
                       id="menssalbasico"
                       class="form-text text-danger"
@@ -475,7 +568,8 @@
                 <div class="col-6">
                   <div class="form-group">
                     <label for="valventa">Valor de la venta</label>
-                    <input type="text" class="form-control" id="valventa" placeholder="Ingrese el valor de la venta" />
+                    <input type="text" class="form-control" id="valventa" placeholder="Ingrese el valor de la venta" 
+                    autocomplete="off"/>
                     <small
                       id="mensvalventa"
                       class="form-text text-danger"
