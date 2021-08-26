@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica clase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/logo-bands.jpg" alt="Logo bandas"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Conciertos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+  </header>
+    <div class="container-fluid">
+        <main>
+          <div class="d-flex justify-content-between align-items-center">
+            <h1>Artistas</h1>
+            <div>
+              <button type="button" class="btn btn-primary mr-3" id="otherSong">Canciones nuevas</button>
+              <button type="button" class="btn btn-primary d-none" id="oldSong">Canciones viejas</button>
+            </div>
+          </div>
+            <section class="row">
+                <div class="col-md-4">
+                    <article class="card">
+                        <img id="image1" class="img img-fluid" src="img/image_content_28810652_20170607174733.jpg" alt="kase-o">
+                        <h4 id="nameSong1">Repartiendo Arte</h4>
+                        <h5>RAP</h5>
+                        <p class="song-title">Kase-O</p>
+                        <audio id="song1" src="audio/repartiendoarte.mp3" type="audio/mpeg" controls></audio>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="card">
+                        <img id="image2" class="img img-fluid" src="img/foo-fighters-1581339172.4464262.jpg" alt="kase-o">
+                        <h4 id="nameSong2">The Pretender</h4>
+                        <h5>Rock</h5>
+                        <p>Foo Figthers</p>
+                        <audio id="song2" src="audio/ThePretender.mp3" type="audio/mpeg" controls></audio>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="card">
+                      <img id="image3" class="img img-fluid" src="img/mitadymitad.jpg" alt="kase-o">
+                      <h4 id="nameSong3">Mitad y Mitad</h4>
+                      <h5>RAP</h5>
+                      <p>Kase-O</p>
+                      <audio id="song3" src="audio/mitadymitad.mp3" type="audio/mpeg" controls></audio>
+                  </article>
+              </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
