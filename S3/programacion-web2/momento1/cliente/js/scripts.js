@@ -26,11 +26,6 @@ function cambiarCancion(){
     nombreCancion3.innerHTML = "Basureta";
     cancion3.src = "audio/basureta.mp3";
 
-    // etiqueta.classList.remove("btn-primary");
-    // etiqueta.classList.add("btn-outline-secondary");
-    // oldsong.classList.remove("btn-outline-secondary");
-    // oldsong.classList.add("btn-primary");
-
     etiqueta.classList.add("d-none");
     oldsong.classList.remove("d-none");
 }
@@ -47,11 +42,6 @@ function returnCancion(){
     imagen3.src = "img/mitadymitad.jpg";
     nombreCancion3.innerHTML = "Mitad y Mitad";
     cancion3.src = "audio/mitadymitad.mp3";
-
-    // etiqueta.classList.remove("btn-outline-secondary");
-    // etiqueta.classList.add("btn-primary");
-    // oldsong.classList.remove("btn-primary");
-    // oldsong.classList.add("btn-outline-secondary");
 
     etiqueta.classList.remove("d-none");
     oldsong.classList.add("d-none");

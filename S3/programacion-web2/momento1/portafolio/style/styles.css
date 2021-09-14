@@ -1,0 +1,536 @@
+body{
+    background: #FAFAFA;
+}
+
+h1, h2, h3, h4, h5, h6, button, a, label{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3{
+    color: #120E48;
+}
+
+h1{
+    font-size: 3.125rem;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 2.625rem;
+}
+
+p{
+    font-size: 1.125rem;
+    color: #535353;
+    font-family: 'DM Sans', sans-serif;
+}
+
+label{
+    color: #120E48;
+}
+
+.align-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align-justify-end{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.align-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.position-sticky{
+    top: 0;
+    background: #fafafa;
+    padding: 10px;
+}
+
+.navbar-collapse{
+    flex-grow: 0 !important;
+}
+
+main .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.social-media img{
+    padding-left: 20px;
+}
+
+.nav-link{
+    color: #120E48;
+}
+
+.color-position{
+    color: #7D89EF;
+}
+
+a{
+    color: #120E48;
+    transition: all ease-in-out 0.5s;
+}
+
+a:hover, .nav-link:focus, .nav-link:hover, .active{
+    color: #7D89EF;
+    text-decoration: underline;
+}
+
+.btn-base{
+    border: none;
+    background: none;
+    border-radius: 20px;
+    padding: 0;
+}
+
+.button-primary{
+    color: #fff;
+    background: #120E48;
+}
+
+.btn-big{
+    padding: 20px 30px;
+}
+
+.icono-scroll{
+    margin: 25px 0 0 0;
+}
+
+.header-article{
+    display: flex;
+    align-items: center;
+}
+
+.header-article img{
+    margin: 0 15px 0 0;
+}
+
+.name-section p, .title-section p{
+    margin: 0;
+}
+
+.body-article p{
+    margin: 20px 0 0 0;
+}
+
+.skill{
+    margin: 40px 0;
+    padding: 0 30px 0 0;
+}
+
+.card-relevant-info{
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 30px 0 0 0;
+    display: flex;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
+}
+
+.card-relevant-info article{
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.card-relevant-info .number{
+    font-size: 42px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #120E48;
+    margin: 0 10px 0 0;
+}
+
+.card-relevant-info .lead{
+    line-height: 24px;
+    font-size: 18px;
+    color: #535353;
+    font-weight: 400;
+}
+
+.padding-sections{
+    padding: 50px 0 50px 0;
+}
+
+.projects .link-projects a{
+    color: #E94B88;
+}
+
+.projects .link-projects img{
+    margin: 0 0 0 5px;
+}
+
+.offcanvas-end{
+    width: 50%;
+}
+
+.contenedor{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 5rem);
+    grid-template-areas: "project-1      project-2   project-3"
+                         "project-1      project-2   project-3"
+                         "project-1      project-2   project-6"
+                         "project-1      project-5   project-6"
+                         "project-4      project-5   project-6"
+                         "project-4      project-5   project-7"
+                         "project-4      project-5   project-7";
+}
+
+.project-1, .project-2, .project-3, .project-4, .project-5, .project-6, .project-7{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 2px 6px -3px rgba(0,0,0,0.20);
+}
+
+.contenedor .project-1{
+    grid-column: project-1;
+    grid-row: project-1;
+}
+
+.contenedor .project-2{
+    color: #000;
+    grid-column: project-2;
+    grid-row: project-2;
+}
+
+
+.contenedor .project-3{
+    background: #E5E5E5;
+    grid-column:  project-3;
+    grid-row:  project-3;
+}
+
+.contenedor .project-4{
+    background: #E5E5E5;
+    grid-column:  project-4;
+    grid-row:  project-4;
+}
+
+.contenedor .project-5{
+    background: #E5E5E5;
+    grid-column:  project-5;
+    grid-row:  project-5;
+}
+
+.contenedor .project-6{
+    background: #E5E5E5;
+    grid-column:  project-6;
+    grid-row:  project-6;
+}
+
+.contenedor .project-7{
+    background: #E5E5E5;
+    grid-column:  project-7;
+    grid-row:  project-7;
+}
+
+.img-width{
+    width: 100%;
+}
+
+/* .contenedor .vacio{
+    background: #fafafa;
+    grid-column:  vacio;
+    grid-row:  vacio;
+} */
+
+.square-bg-left{
+    background: #f5f5ff;
+    position: absolute;
+    width: 850px;
+    height: 900px;
+    z-index: -1;
+    left: 0;
+    border-radius: 30px;
+}
+
+.square-bg-right{
+    background: #f5f5ff;
+    position: absolute;
+    width: 850px;
+    height: 500px;
+    z-index: -1;
+    right: 0;
+    border-radius: 30px;
+}
+
+.about-me .name-section .sub-parra{
+    margin: 40px 0 0 0;
+}
+
+.body-about p{
+    padding: 30px 0;
+}
+
+.myself{
+    display: flex;
+    align-items: center;
+}
+
+.myself img{
+    margin: 0 25px 0 0;
+}
+
+.favorite-apps{
+    padding: 60px 0 0 0;
+}
+
+.apps{
+    padding: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-app{
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
+}
+
+.card-app img{
+    width: 80px;
+}
+
+.card-app p{
+    margin: 0;
+}
+
+.card-contact{
+    background: #fff;
+    border-radius: 30px;
+    margin: 30px 0 0 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
+}
+
+.card-aditional-contact{
+    position: relative;
+    display: flex;
+    background: #fff;
+    width: 75%;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.44);
+}
+
+.contact-way{
+    margin: 10px 0;
+}
+
+input, textarea{
+    border: 1px solid #C9C9C9;
+    margin: 0 0 20px 0;
+    padding: 15px;
+    border-radius: 30px;
+    transition: all ease-in-out 0.5s;
+}
+
+input:focus-visible, textarea:focus-visible{
+    border-radius: 30px;
+    border: 1px solid #7D89EF;
+    outline: none;
+    background: #f2f3ff;
+}
+
+.img-contact{
+    position: absolute;
+    left: -30px;
+    top: 10px;
+}
+
+.contact-info{
+    padding-left: 100px;
+}
+
+footer{
+    background: #fff;
+    padding: 20px 0;
+    margin: 50px 0 0 0;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p{
+    margin: 0;
+}
+
+@media screen and (max-width: 768px){
+
+    .menu-mobile{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .social-media{
+        text-align: center;
+    }
+
+    .social-media img{
+        width: 60px;
+    }
+    .navbar-nav{
+        text-align: center;
+        font-size: 30px;
+    }
+    .contact .name-section{
+        text-align: center;
+    }
+
+    .skill{
+        text-align: center;
+    }
+
+    .header-article{
+        flex-direction: column;
+    }
+
+    .card-relevant-info{
+        flex-wrap: wrap;
+    }
+
+    .card-relevant-info article{
+        width: 44%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 20px 15px 0;
+    }
+
+    .card-relevant-info .number{
+        font-size: 35px;
+    }
+
+    .card-relevant-info .lead{
+        font-size: 16px;
+    }
+
+    .align-justify-end{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .link-projects p{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(16, 50px);
+        grid-template-areas: "project-1 project-2"
+                             "project-1 project-2"
+                             "project-1 project-2"
+                             "project-1 project-2"
+                             "project-3 project-4"
+                             "project-3 project-4"
+                             "project-3 project-4"
+                             "project-3 project-4"
+                             "project-5 project-6"
+                             "project-5 project-6"
+                             "project-5 project-6"
+                             "project-5 project-6"
+                             "project-7 project-7"
+                             "project-7 project-7"
+                             "project-7 project-7"
+                             "project-7 project-7";
+    }
+
+    .square-bg-left, .square-bg-right{
+        width: 284px;
+        height: 300px;
+    }
+
+    .apps{
+        flex-wrap: wrap;
+    }
+
+    .card-app{
+        margin: 10px 0;
+    }
+
+    .card-aditional-contact{
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+        width: 100%;
+    }
+
+    .contact-info{
+        padding: 100px 0 0 0;
+    }
+
+    .img-contact{
+        left: 30%;
+    }
+
+    .button-contact button{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 565px){
+    .card-relevant-info article{
+        width: 100%;
+    }
+
+    .contenedor{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(28, 90px);
+        grid-template-areas: "project-1"
+                             "project-1"
+                             "project-1"
+                             "project-1"
+                             "project-2"
+                             "project-2"
+                             "project-2"
+                             "project-2"
+                             "project-3"
+                             "project-3"
+                             "project-3"
+                             "project-3"
+                             "project-4"
+                             "project-4"
+                             "project-4"
+                             "project-4"
+                             "project-5"
+                             "project-5"
+                             "project-5"
+                             "project-5"
+                             "project-6"
+                             "project-6"
+                             "project-6"
+                             "project-6"
+                             "project-7"
+                             "project-7"
+                             "project-7"
+                             "project-7";
+    }
+
+}
