@@ -1,3 +1,4 @@
+/* Estilos generales */
 body{
     background: #FAFAFA;
 }
@@ -47,6 +48,12 @@ label{
     align-items: center;
 }
 
+.padding-sections{
+    padding: 50px 0 50px 0;
+}
+
+/* Navbar menu */
+
 .position-sticky{
     top: 0;
     background: #fafafa;
@@ -74,12 +81,15 @@ main .navbar-expand-lg .navbar-nav .nav-link {
     color: #7D89EF;
 }
 
+
+/* Botones */
+
 a{
     color: #120E48;
     transition: all ease-in-out 0.5s;
 }
 
-a:hover, .nav-link:focus, .nav-link:hover, .active{
+a:hover, .nav-link:focus, .nav-link:hover, a.active{
     color: #7D89EF;
     text-decoration: underline;
 }
@@ -94,15 +104,60 @@ a:hover, .nav-link:focus, .nav-link:hover, .active{
 .button-primary{
     color: #fff;
     background: #120E48;
+    transition: all ease-in-out 0.5s;
+}
+
+.button-primary:hover{
+    background: #332c99;
+    box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 44%);
 }
 
 .btn-big{
     padding: 20px 30px;
 }
 
-.icono-scroll{
-    margin: 25px 0 0 0;
+/* Animación scroll down */
+
+@keyframes scroll_1 {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-0.6em); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(0.6em); }
+  100% { transform: translateY(0); }
 }
+
+.scroll-icon__wheel-outer {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: .6em;
+  height: 1em;
+  width: .4em;
+  margin-left: -.2em;
+  border-radius: .4em;
+  overflow: hidden;
+}
+
+.scroll-icon__wheel-inner {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: #b5bdff;
+  animation: scroll_1 2.75s ease-in-out infinite;
+}
+
+.scroll-icon {
+    margin: 20px 0 0 0;
+    display: block;
+    position: relative;
+    height: 3em;
+    width: 2em;
+    border: .25em solid #b5bdff;
+    border-radius: 1em;
+}
+
+/* Estilos de la sección habilidades */
 
 .header-article{
     display: flex;
@@ -156,9 +211,7 @@ a:hover, .nav-link:focus, .nav-link:hover, .active{
     font-weight: 400;
 }
 
-.padding-sections{
-    padding: 50px 0 50px 0;
-}
+/* Estilos de la sección proyectos */
 
 .projects .link-projects a{
     color: #E94B88;
@@ -238,11 +291,24 @@ a:hover, .nav-link:focus, .nav-link:hover, .active{
     width: 100%;
 }
 
-/* .contenedor .vacio{
-    background: #fafafa;
-    grid-column:  vacio;
-    grid-row:  vacio;
-} */
+.align-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f3f4f9;
+    padding: 15px 10px;
+    border-radius: 4px;
+}
+
+.align-link h6{
+    margin: 0;
+}
+
+.offcanvas-body .images img{
+    width: 100%;
+}
+
+/* Estilos de la sección Acerca de */
 
 .square-bg-left{
     background: #f5f5ff;
@@ -310,6 +376,8 @@ a:hover, .nav-link:focus, .nav-link:hover, .active{
     margin: 0;
 }
 
+/* Estilos de la sección Contacto */
+
 .card-contact{
     background: #fff;
     border-radius: 30px;
@@ -371,15 +439,22 @@ footer{
     align-items: center;
 }
 
-.footer p{
+.footer p, .footer h6{
     margin: 0;
+    font-size: 14px;
 }
+
+/* Estilos responsive */
 
 @media screen and (max-width: 768px){
 
     .menu-mobile{
         display: flex;
         justify-content: space-between;
+        width: 100%;
+    }
+
+    .offcanvas-end {
         width: 100%;
     }
 

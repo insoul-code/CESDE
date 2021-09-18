@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="style/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/animate.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
     <main>
         <div class="container">
             <nav class="navbar navbar-expand-lg align-between position-sticky">
                 <div class="menu-mobile">
-                    <a class="navbar-brand" href="#"><img src="img/ic-ghost-srr-portafolio.svg" alt="Logo srr portafolio"></a>
+                    <a class="navbar-brand" href="#inicio"><img src="img/ic-ghost-srr-portafolio.svg" alt="Logo srr portafolio"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"><img src="img/menu.svg" alt=""></span>
                     </button>
@@ -24,7 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#skills">Habilidades</a>
+                            <a class="nav-link" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Habilidades</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#works">Trabajos</a>
@@ -37,14 +41,14 @@
                         </li>
                     </ul>
                     <div class="social-media">
-                        <a href="#"><img src="img/ic-instagram.svg" alt="Icono Instagram"></a>
-                        <a href=""><img src="img/ic-github.svg" alt="Icono GitHub"></a>
+                        <a href="https://www.instagram.com/insoul_12/" target="_blank"><img src="img/ic-instagram.svg" alt="Icono Instagram"></a>
+                        <a href="https://github.com/Santiago1220" target="_blank"><img src="img/ic-github.svg" alt="Icono GitHub"></a>
                     </div>
                 </div>
             </nav>
-            <section class="banner-inicio padding-sections">
+            <section class="banner-inicio padding-sections wow animate__animated animate__fadeInDown" id="inicio">
                 <div class="row align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <h1 class="head-message">
                             Hola, Soy<br>
                             Desarrollador<br>
@@ -56,19 +60,21 @@
                             ayudo a empresas o Startups a potenciar sus aplicativos
                             web y móviles.
                         </p>
-                        <button class="btn-base button-primary btn-big">Trabajemos juntos</button>
-                        <div class="icono-scroll">
-                            <img src="img/ic-scroll.svg" alt="Icono Scroll">
-                        </div>
+                        <button onclick="window.location.href='#contact'" class="btn-base button-primary btn-big">Trabajemos juntos</button>
+                        <span class="scroll-icon">
+                            <span class="scroll-icon__wheel-outer">
+                              <span class="scroll-icon__wheel-inner"></span>
+                            </span>
+                        </span>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="d-flex justify-content-center">
-                            <img src="img/ic-foto-srr.png" alt="Foto Santiago Restrepo Rueda">
+                            <img src="img/ic-foto-srr-portfolio.png" alt="Foto Santiago Restrepo Rueda" class="img img-fluid">
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="skills padding-sections" id="skills">
+            <section class="skills padding-sections wow animate__animated animate__fadeInUp" id="skills">
                 <div class="title-section align-center">
                     <p>Lo que mejor se hacer</p>
                     <h2>Mis habilidades</h2>
@@ -182,35 +188,178 @@
                         </button>
                     </div>
                     <div class="project-2">
-                        <img class="img-width" src="img/project2@2x.png" alt="XM Portal web">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#xm" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project2@2x.png" alt="XM Portal web">
+                        </button>
                     </div>
                     <div class="project-3">
-                        <img class="img-width" src="img/project3@2x.png" alt="Fondo Presente">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#fondopresente" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project3@2x.png" alt="Fondo Presente">
+                        </button>
                     </div>
                     <div class="project-4">
-                        <img class="img-width" src="img/project5@2x.png" alt="ARKD">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#arkd" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project5@2x.png" alt="ARKD">
+                        </button>
                     </div>
                     <div class="project-5">
-                        <img class="img-width" src="img/project4@2x.png" alt="Vegaflor">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#vegaflor" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project4@2x.png" alt="Vegaflor">
+                        </button>
                     </div>
                     <div class="project-6">
-                        <img class="img-width" src="img/project6@2x.png" alt="ARUS">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#arus" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project6@2x.png" alt="ARUS">
+                        </button>
                     </div>
-                    <div class="project-7">7</div>
+                    <div class="project-7">
+                        <button class="btn-base button-project" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotify" aria-controls="offcanvasRight">
+                            <img class="img-width" src="img/project7@2x.png" alt="Spotify">
+                        </button>
+                    </div>
                 </div>
+                <!-- Off canvas con el contenido de cada proyecto -->
+
+                <!-- SURA -->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="sura" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                        <h2 id="sura">SURA</h2>
+                        <h2 id="suraIn">SURA</h2>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
+                        <h5>Proyecto: Inclusión asegurados</h5>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis eros maximus iaculis rutrum. Fusce tincidunt lorem a sem ornare, ut elementum risus scelerisque. Cras enim risus, tempor ut dolor ut, sollicitudin dictum nibh. Sed est ipsum, pellentesque id orci at, vulputate ultricies libero. Donec ut nulla congue, egestas tortor vel, tincidunt metus. Suspendisse potenti. Pellentesque dolor mi, vestibulum id enim in, lacinia egestas leo. Integer laoreet ante sit amet est auctor tincidunt.
+                            Para garantizar la transparencia sobre el ingreso de la información al tomar un seguro, secrea el proyecto Inclusión Asegurados en el cual ayudamos a los usuarios a través de un proceso guiado la toma de su inclusión y la de sus familiares.
                         </p>
+                        <div class="align-link">
+                            <h6>Prototipo</h6>
+                            <a href="https://xd.adobe.com/view/704a8277-4450-41e0-91e2-50dffee0de5e-2519/" target="_blank">Conoce el resultado</a>
+                        </div>
+                        <div class="images">
+                            <img src="img/project1-sura-offcanvas.jpg" alt="Sura inclusión asegurados">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XM -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="xm" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="xmp">XM</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Portal Web</h5>
+                        <p>
+                            XM contaba con un portal en sharepoint el cual no le permitia tener mucha interacción y buena experiencia para los usuarios finales. Es por esto que se decide migrar a drupal y desarrollar los componentes funcionales de indicadores y gráficas en Angular y Java.
+                        </p>
+                        <div class="align-link">
+                            <h6>Desarrollo</h6>
+                            <a href="https://xmzcuportaldrupaldllappb01.azurewebsites.net/" target="_blank">Conoce el resultado</a>
+                        </div>
+                        <div class="images">
+                            <img src="img/project2-xm-offcanvas.jpg" alt="XM Portal web">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fondo Presente -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="fondopresente" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="fp">Fondo Presente</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Fondo de ahorros Grupo Presente</h5>
+                        <p>
+                            Este proyecto fué uno de los más significativos para mi ya que se realizó una muy buena investigación de usuario, un muy buen prototipo y cuando plasmamos esto en el desarrollo fué un éxito. La idea principal del proyecto es brindar una solución de administración para los agentes de Fondo Presente la cual es una aplicación del Grupo Éxito y se requeria una aplicación que pudiera tomar todas las solicitudes que este Fondo recibe por parte de sus empleados.
+                        </p>
+                        <div class="images">
+                            <img src="img/project3-fondopresente-offcanvas.jpg" alt="Exito Fondo Presente">
+                        </div>
                     </div>
                 </div> 
+
+                <!-- ARKD -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="arkd" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="arkds">ARKD</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Sitio web ARKD</h5>
+                        <p>
+                            Un proyecto full UI, en el cual participé hace poco y aún está en desarrollo. La idea principal es un sitio web donde se realizará la inscripción a torneos de video juegos en todas las plataformas (xbox, ps5, pc).
+                        </p>
+                        <div class="align-link">
+                            <h6>Prototipo</h6>
+                            <a href="https://xd.adobe.com/view/00c730d4-d946-4e52-a07c-de75e3b4781a-5594/" target="_blank">Conoce el resultado</a>
+                        </div>
+                        <div class="images">
+                            <img src="img/project4-arkd-offcanvas.jpg" alt="ARKD">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegaflor -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="vegaflor" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="vega">Vegaflor</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Aplicación Vegaflor</h5>
+                        <p>
+                            En este proyecto se realizó. consultoria UX, Laboratorios con usuarios, UI, Desarrollo. El objetivo del proyecto era organizar el inventario y despacho a nivel Colombia y Miami la distribución de las flores con sus diferentes variedades que se solicitan y venden a las distribuidoras a nivel nacional e internacional.
+                        </p>
+                        <div class="images">
+                            <img src="img/project5-vegaflor-offcanvas.jpg" alt="ARKD">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARUS -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="arus" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="arus-estandar">ARUS</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Sistema de diseño</h5>
+                        <p>
+                            Con motivo de tener un orden consecuente en el desarrollo de las aplicaciones que ARUS pueda llegar a tener; se decide realizar un sistema de diseño con todos los elementos gráficos atómicos que se necesitan para la construcción de nuevos componentes o proyectos.
+                        </p>
+                        <div class="align-link">
+                            <h6>Desarrollo</h6>
+                            <a href="https://sistemasdediseno.ceiba.com.co/arus/" target="_blank">Conoce el resultado</a>
+                        </div>
+                        <div class="images">
+                            <img src="img/project6-arus-offcanvas.jpg" alt="ARUS">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spotify -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="spotify" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="arus-estandar">Spotify Api</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h5>Proyecto: Integración Api Spotify</h5>
+                        <p>
+                            El objetivo de esté proyecto fué conectarse a la Api de Spotify y realizar una petición a través de una promesa (fetch) para recibir constantemente los datos y en el front poder visualizar los datos de un artista y organizar su presentación. 
+                        </p>
+                        <div class="align-link">
+                            <h6>Desarrollo</h6>
+                            <a href="../clienteSpotify/index.html" target="_blank">Conoce el resultado</a>
+                        </div>
+                        <div class="images">
+                            <img src="img/project7-spotify-offcanvas.jpg" alt="Spotify">
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section class="about-me padding-sections" id="about">
+            <section class="about-me padding-sections wow animate__animated animate__fadeInUp" id="about">
                 <div class="square-bg-left"></div>
                 <div class="name-section">
                     <p class="sub-parra">Gusto en conocerte</p>
@@ -221,12 +370,14 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="body-about">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac odio sit amet enim porta volutpat. Vestibulum sed tempor dui. Morbi vitae fermentum nisl, vel pharetra neque. Sed nec mollis justo, quis interdum elit. Pellentesque massa ex, tempus a tempus ut, consequat a libero. In luctus turpis eget urna imperdiet consequat vel ut velit. Ut ultricies egestas nulla, in sagittis sem dignissim eu. Duis a viverra purus. In ut quam scelerisque, sollicitudin diam vitae, fringilla augue. Etiam non maximus tellus. Aenean velit arcu, volutpat eget finibus eget, dapibus in tellus.</p>
+                            <p>
+                                El diseño y el desarrollo son dos temas que siempre van a estar unidos; el motivo principal es porque la presentación de los elementos e información se debe hacer ordenadamente ya que si no lo hacemos vamos a generar carga cognitiva excesiva al usuario final. Es por está principal razón por la que decidí ser más que un diseñador UI y embarcarme en el maravilloso mundo del desarrollo de software; en este camino de conocimiento he encontrado bastantes puntos en común sobre las metodologías  de diseño incluso en el back donde también me desenvuelvo muy bien, sin embargo mi esencia es el front y es por esto que soy <strong>Fronted UI & Diseñador UX/UI.</strong> <a href="#contact">¡Trabajemos juntos!</a>
+                            </p>
                             <div class="myself">
                                 <img src="img/img-srr.png" alt="Santiago Restrepo Rueda">
                                 <div>
                                     <h5>Santiago Restrepo Rueda</h5>
-                                    <div><span>Diseñador UX/UI . En <a href="">Ceiba Software</a></span></div>
+                                    <div><span>Diseñador UX/UI . En <a href="https://www.ceiba.com.co/" target="_blank">Ceiba Software</a></span></div>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +419,7 @@
                     </div>
                 </div>
             </section>
-            <section class="contact padding-sections" id="contact">
+            <section class="contact padding-sections wow animate__animated animate__fadeInUp" id="contact">
                 <div class="square-bg-right"></div>
                 <div class="name-section">
                     <p class="sub-parra">Unamos conocimientos</p>
@@ -296,11 +447,11 @@
                                     <h5>Otros medios de contacto</h5>
                                     <div class="contact-way">
                                         <img src="img/ic-mini-telegram.png" alt="Telegram">
-                                        <a href="">+57 320 458 79 85</a>
+                                        <a href="https://telegram.me/insoul12" target="_blank">+57 320 458 79 85</a>
                                     </div>
                                     <div class="contact-way">
                                         <img src="img/ic-mini-gmail.png" alt="Gmail">
-                                        <a href="">insouldesign@gmail.com</a>
+                                        <a href="mailto:insouldesign@gmail.com">insouldesign@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +465,7 @@
                 <div class="footer">
                     <p>"Una idea no es ni más ni menos que la union de viejos elementos" Jack Foster</p>
                     <div class="d-flex">
-                        <h6>Santiago Restrepo Rueda -</h6><span> Todos los derechos reservados</span>
+                        <h6>Santiago Restrepo Rueda</h6>
                     </div>
                 </div>
             </div>

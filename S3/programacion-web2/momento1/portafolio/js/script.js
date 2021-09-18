@@ -23,3 +23,10 @@ function animateValue(obj, start, end, duration) {
 
   const obj4 = document.getElementById("value4");
   animateValue(obj4, 0, 99, 2500);
+
+  $(function(){
+    $('#navbarNav a').click(function () {
+        $('#navbarNav a').removeClass('active');
+        $(this).addClass('active');
+    });
+});
