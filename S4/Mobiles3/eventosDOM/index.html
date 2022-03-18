@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de eventos con JS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: #F1F2F3;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .flex{
+            width: 250px;
+        }
+
+        .flex, .form-group{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group{
+            margin: 15px 0;
+        }
+
+        .form-group input{
+            height: 40px;
+            font-size: 40px;
+            border-radius: 4px;
+            border: 1px solid #c1c1c1;
+        }
+        .error{
+            color: #ff2a2a;
+            transition: all ease-in-out 0.5s;
+            font-size: 13px;
+        }
+        .btncalcular{
+            border: none;
+            cursor: pointer;
+            color: white;
+            background: #3838ff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all ease-in-out 0.5s;
+        }
+        .btncalcular:hover{
+            background: #2b2bc7;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #definitiva{
+            font-size: 40px;
+        }
+        #observacion{
+            font-size: 20px;
+        }
+        label{
+            color: #5e5e5e;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Sistema de notas</h1>
+        <form action="" class="flex">
+            <div class="form-group">
+                <label for="nota1">Nota1</label>
+                <input type="number" name="nota1" id="nota1">
+                <span id="mensajeNota1" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="nota2">Nota2</label>
+                <input type="number" name="nota2" id="nota2">
+                <span id="mensajeNota2" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="nota3">Nota3</label>
+                <input type="number" name="nota3" id="nota3">
+                <span id="mensajeNota3" class="error"></span>
+            </div>
+            <div class="form-group">
+                <button id="btncalcular" class="btncalcular" type="button">Calcular</button>
+            </div>
+            <div class="form-group">
+                <label for="nota3">Nota definitiva</label>
+                <span id="definitiva"></span>
+                <label for="observacion">Observación</label>
+                <span id="observacion"></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        let nota1 = document.getElementById('nota1')
+        let nota2 = document.getElementById('nota2')
+        let nota3 = document.getElementById('nota3')
+        let mensajeNota1 = document.getElementById('mensajeNota1')
+        let mensajeNota2 = document.getElementById('mensajeNota2')
+        let mensajeNota3 = document.getElementById('mensajeNota3')
+        let definitiva = document.getElementById('definitiva')
+        let observacion = document.getElementById('observacion')
+        let btncalcular = document.getElementById('btncalcular')
+        //Eventos del DOM
+        nota1.onfocus = function(){
+            mensajeNota1.innerHTML = "La nota1 es obligatoria"
+        }
+        nota1.onblur = function(){
+            mensajeNota1.innerHTML = ""
+        }
+        nota2.addEventListener('focus',function(){
+            mensajeNota2.innerHTML = "La nota2 es obligatoria"
+        })
+        nota2.addEventListener('blur',function(){
+            mensajeNota2.innerHTML = ""
+        })
+        nota3.addEventListener('focus',function(){
+            mensajeNota3.innerHTML = "La nota3 es obligatoria"
+        })
+        nota3.addEventListener('blur',function(){
+            mensajeNota3.innerHTML = ""
+        })
+
+        function calcularDefinitiva(){
+            let resultado = (parseFloat(nota1.value)+parseFloat(nota2.value)+parseFloat(nota3.value))/3
+            definitiva.innerHTML = resultado.toFixed(2)
+            if(resultado >= 3){
+                observacion.innerHTML = "¡Aprobaste!"
+            }else{
+                if(resultado < 2){
+                    observacion.innerHTML = "Reprobó"
+                }else{
+                    observacion.innerHTML = "Aún no es competente"
+                }
+            }
+        }
+
+       /*  function calcularDefinitivaParametros(def1,def2,def2){
+            let resultado = (parseFloat(def1)+parseFloat(def2)+parseFloat(def3))/3
+            definitiva.innerHTML = resultado.toFixed(2)
+            if(resultado >= 3){
+                observacion.innerHTML = "¡Aprobaste!"
+            }else{
+                if(resultado < 2){
+                    observacion.innerHTML = "Reprobó"
+                }else{
+                    observacion.innerHTML = "Aún no es competente"
+                }
+            }
+        } */
+        //Evento click del botón calcular
+        btncalcular.addEventListener('click',calcularDefinitiva)
+    </script>
+</body>
+</html>

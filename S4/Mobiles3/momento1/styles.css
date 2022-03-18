@@ -1,0 +1,58 @@
+body{
+    background: #F1F2F3;
+    font-family: 'Fredoka', sans-serif;
+}
+
+input{
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card{
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    width: 300px;
+    margin: 0 0 10px 0;
+}
+.row{
+    width: 300px;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.cargar img{
+    width: 60px;
+}
+
+.cargar{
+    display: flex;
+    align-items: center;
+}
+
+.noProduct{
+    background: #ffa9a9;
+    color: #681d1d;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#producto span{
+    font-size: 16px;
+    font-weight: 700;
+}
+.d-none{
+    display: none;
+}
