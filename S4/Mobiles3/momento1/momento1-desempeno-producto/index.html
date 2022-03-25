@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momento 1 desempeño y producto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="card">
+            <h3>Sistema para enviar, consultar y listar inmuebles</h3>
+            <form action="">
+                <div class="form-group">
+                    <label for="idInmueble">Id del inmueble</label>
+                    <input type="number" name="idInmueble" id="idInmueble" placeholder="Ingrese el id del inmueble">
+                    <span class="error" id="mensajeidInmueble"></span>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion" id="direccion" placeholder="Ingrese una dirección valida" autocomplete="off">
+                    <span class="error" id="mensajeDireccion"></span>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" name="precio" id="precio" placeholder="Ingrese el precio del inmueble" autocomplete="off">
+                    <span class="error" id="mensajePrecio"></span>
+                </div>
+                <div class="form-group">
+                    <button id="btnEnviar" class="btn btnEnviar" 
+                        onclick="enviarInfo()" type="button">
+                        <span class="material-icons">send</span>
+                        Enviar inmueble
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button id="btnBuscar" class="btn btnBuscar"
+                        onclick="buscarInmueble()" type="button">
+                        <span class="material-icons">search</span>
+                        Buscar inmueble
+                    </button>
+                </div>
+                <div class="form-group">
+                    <p id="respuesta" class="respuesta"></p>
+                    <p id="respuestaBusqueda"></p>
+                </div>
+            </form>
+        </div>
+        <div class="card">
+            <div class="form-group">
+                <button id="btnListar" class="btn btnListar" 
+                    onclick="listarInmuebles()" type="button">
+                    <span class="material-icons">format_list_bulleted</span>
+                    Listar inmuebles
+                </button>
+            </div>
+            <div class="listado" id="listado"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

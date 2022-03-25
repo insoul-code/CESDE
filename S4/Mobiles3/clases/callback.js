@@ -169,7 +169,7 @@ function promesaUsuarios(datos){
 
 
 //Ejecutar promesa
-/*promesaUsuarios(usuarios)
+promesaUsuarios(usuarios)
     .then((data)=>{
         //Recorrer arreglo de objetos
         let html = "";
@@ -186,7 +186,7 @@ function promesaUsuarios(datos){
     })
     .catch((error)=>{
         document.getElementById('datosUsuarios').innerHTML = error;
-    })*/
+    })
 
 //Async y await
 function promesaAsync(){
