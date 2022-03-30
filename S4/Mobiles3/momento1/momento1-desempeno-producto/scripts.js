@@ -65,22 +65,28 @@ function enviarInfo(){
             document.getElementById('idInmueble').value = ""
             document.getElementById('direccion').value = ""
             document.getElementById('precio').value = ""
+            document.getElementById('respuesta').classList.add("respuesta-success")
+            document.getElementById('respuesta').classList.add("d-none")
         })
         .catch((error)=>{
             document.getElementById('respuesta').innerHTML = error
-            document.getElementById('respuesta').style.display = "block"
+            document.getElementById('respuesta').classList.add("respuesta")
         })
     },2000)
 }
 
 function buscarInmueble(){
     inmuebles.filter(function(inmueble){
-        if(idInmueble.value == inmueble.idInmueble){
+        if(idInmueble.value == inmueble.idInmueble && inmueble.estado == true){
             document.getElementById('direccion').value = inmueble.direccion;
             document.getElementById('precio').value = `$${convertCop.format(inmueble.precio)} COP`;
-            document.getElementById('respuestaBusqueda').style.display = "none"
+            document.getElementById('respuestaBusqueda').classList.add("d-none")
+            document.getElementById('respuesta').classList.add("d-none")
+
         }else{
-            document.getElementById('respuestaBusqueda').innerHTML = "El inmueble no exite en la base de datos"
+            document.getElementById('respuestaBusqueda').innerHTML = "El inmueble no exite en la base de datos o no está disponible"
+            document.getElementById('respuestaBusqueda').classList.add("respuesta-noexist")
+            document.getElementById('respuesta').classList.add("d-none")
         }
     })
 }

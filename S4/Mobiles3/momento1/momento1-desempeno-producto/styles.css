@@ -99,9 +99,26 @@ table tr td{
     padding: 10px;
 }
 
-.respuesta{
-    background: #afafff;
+.base-respuesta{
     padding: 10px;
     border-radius: 4px;
+}
+.respuesta{
+    background: #afafff;
+}
+
+.respuesta-noexist{
+    background: #ffafaf;
+}
+
+.respuesta-success{
+    background: #9bff9b;
+}
+
+.d-none{
     display: none;
+}
+
+.d-block{
+    display: block;
 }
