@@ -31,6 +31,9 @@
             border-radius: 4px;
             border: 1px solid #c1c1c1;
         }
+        .form-group input:focus{
+            background:#afefff;
+        }
         .error{
             color: #ff2a2a;
             transition: all ease-in-out 0.5s;
@@ -154,5 +157,15 @@
         //Evento click del botón calcular
         btncalcular.addEventListener('click',calcularDefinitiva)
     </script>
+    <form>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+    </form>
 </body>
 </html>

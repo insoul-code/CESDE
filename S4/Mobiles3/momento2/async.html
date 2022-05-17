@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Manejo de Async y await</h1>
+    <script>
+        function mensajeAsync(){
+            return "Hola desde una función"
+        }
+
+        async function fasync(){
+            let mensaje = await mensajeAsync()
+            console.log(mensaje)
+        }
+
+        // fasync()
+
+        let programas = [
+            {cprog:"1",nombre:"Desarrollo"},
+            {cprog:"2",nombre:"Diseño"}
+        ]
+
+        let programas1 =[]
+
+        function promprog(arrobj){
+            return new Promise((resolve,reject)=>{
+                console.log("Buscando programas")
+                setTimeout(()=>{
+                    if(arrobj.length > 0){
+                            resolve(arrobj)
+                    }
+                    else{
+                        reject("No hay programas para mostrar")
+                    }
+                },3000)
+            })
+        }
+
+        async function callpromprog(){
+            try{
+                let resultado = await promprog(programas)
+                console.log(resultado)
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+
+        // callpromprog()
+
+        function getUsers(id){
+            const url = `https://jsonplaceholder.typicode.com/users/${id}`
+            fetch(url)
+            .then(response => response.json())
+            .then(users => console.log(users))
+        }
+
+        // getUsers(1)
+
+        async function getUsersid(id){
+            const url = `https://jsonplaceholder.typicode.com/users/${id}`
+            let respuesta = await fetch(url)
+            let json = await respuesta.json()
+            if(respuesta.status != 200){
+                throw Error("No se ha encontrado el id")
+            }
+            return json
+        }
+
+        (async ()=>{
+            try{
+                // console.log(getUsersid(200))
+                let resultado = await getUsersid(10)
+                console.log(resultado)
+            }
+            catch(error){
+                console.log(error)
+            }
+        })()
+    </script>
+</body>
+</html>
